@@ -1,0 +1,25 @@
+kind: Invoke
+apiVersion: api.ibm.com/v1
+metadata:
+  name: invoke-yhim4
+  namespace: Interact_GW_Weather_MCP_Server
+  version: '1.0'
+  domain: mcp
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  endpoint:
+    http:
+      target:
+        tlsClientProfile: sample-tls-client-profile:1.0.0
+        url: >-
+          'https://sample-api.eu-west-a.apiconnect.automation.ibm.com/environment'
+          & $pathAndQuery()
+        urlType: jsonata
+        persistentConnections: false
+        timeout: 30
+        decompressResponse: true
+        followRedirects: false
+        chunkedUpload: false

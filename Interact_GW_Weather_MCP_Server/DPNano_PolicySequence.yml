@@ -1,0 +1,16 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: Interact_GW_Weather_MCP_Server-freeflowpolicysequence-yhim4
+  namespace: Interact_GW_Weather_MCP_Server
+  version: '1.0'
+  domain: mcp
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  main:
+    - $ref: Interact_GW_Weather_MCP_Server:invoke-yhim4:1.0
+  monitoring:
+    $ref: Interact_GW_Weather_MCP_Server:telemetry-yhim4:1.0

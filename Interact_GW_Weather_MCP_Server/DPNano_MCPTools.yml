@@ -1,0 +1,45 @@
+kind: MCPTools
+apiVersion: api.ibm.com/v1
+metadata:
+  name: weather-api-tool-yhim4
+  namespace: Interact_GW_Weather_MCP_Server
+  version: '1.0'
+  domain: mcp
+  tags: []
+  description: >-
+    Singapore Air Temperature API - provides real-time air temperature data for
+    Singapore
+  labels:
+    api-spec: ./weather-api-spec.yml
+spec:
+  tools:
+    - name: get_air-temperature
+      description: >-
+        Returns the current (or recent) air temperature observations across
+        multiple stations in Singapore. The dataset covers May 2016 to present.
+      inputSchema:
+        type: object
+        properties:
+          station_id:
+            description: The station identifier to filter by a specific station (optional)
+            x-parameter-location: query
+            type: string
+            example: S101
+          start_time:
+            description: ISO-8601 timestamp to filter readings from this time (optional)
+            x-parameter-location: query
+            type: string
+            format: date-time
+            example: 2025-11-10T16:00:00.000Z
+          end_time:
+            description: ISO-8601 timestamp to filter readings up to this time (optional)
+            x-parameter-location: query
+            type: string
+            format: date-time
+            example: 2025-11-11T04:00:00.000Z
+      title: Get air temperature readings across Singapore
+      x-api-binding:
+        operationPath: /air-temperature
+        operationMethod: GET
+        api:
+          $path: ./weather-api-spec.yml

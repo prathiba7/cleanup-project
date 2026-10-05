@@ -1,0 +1,180 @@
+{
+  "nodes": [
+    {
+      "id": "08265988-72aa-4bb8-9799-46cc22318582:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_Invoke.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216609889,
+      "schemaVersion": 1,
+      "kind": "Invoke",
+      "name": "invoke-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "082eb7630318b8ee"
+    },
+    {
+      "id": "2d49bf2d-b61f-42c9-87d6-550431d00631:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_PolicySequence.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216611545,
+      "schemaVersion": 1,
+      "kind": "FreeFlowPolicySequence",
+      "name": "Interact_GW_Weather_MCP_Server-freeflowpolicysequence-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "4e34a928e854c75b"
+    },
+    {
+      "id": "56aab829-7152-408e-bb18-e8cc674d0916:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_Quota.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216614489,
+      "schemaVersion": 1,
+      "kind": "Quota",
+      "name": "Interact_GW_Weather_MCP_Server-quota-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "a5c1407f025db278"
+    },
+    {
+      "id": "696971d5-a0cd-4f3e-a57d-79c95fbe1ca4:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/README.md",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1791216615161,
+      "schemaVersion": 1
+    },
+    {
+      "id": "83776b14-f9d4-4a57-baec-9ee934cc3395:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/weather-api-spec.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1791216615911,
+      "schemaVersion": 1
+    },
+    {
+      "id": "a0ea17cb-8ee0-49a1-8d87-851c25b5a380:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_MCPServer.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216613039,
+      "schemaVersion": 1,
+      "kind": "MCPServer",
+      "name": "weather-api-server-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "8a1afc9bf5e0e06c"
+    },
+    {
+      "id": "caaca691-53fc-45bd-ae68-b79f3ce8d10e:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_MCPTools.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216613809,
+      "schemaVersion": 1,
+      "kind": "MCPTools",
+      "name": "weather-api-tool-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "e149dd27917111f4"
+    },
+    {
+      "id": "faf7b111-323a-41e7-ad38-3e5ed900c1f1:0",
+      "projectId": "gG6nDKcA",
+      "filePath": "Interact_GW_Weather_MCP_Server/DPNano_Telemetry.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1791216612347,
+      "schemaVersion": 1,
+      "kind": "Telemetry",
+      "name": "telemetry-yhim4",
+      "namespace": "Interact_GW_Weather_MCP_Server",
+      "version": "1.0",
+      "contentHash": "9efe09531aaed6f7"
+    }
+  ],
+  "edges": [
+    {
+      "id": "00a7a2ab-ed1c-4491-a919-15bb76e3e308",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "caaca691-53fc-45bd-ae68-b79f3ce8d10e:0",
+      "targetNodeId": "83776b14-f9d4-4a57-baec-9ee934cc3395:0",
+      "targetRefType": "same-project",
+      "targetRefString": "./weather-api-spec.yml",
+      "targetRefKind": "support",
+      "isValid": true,
+      "createdAt": 1791216613810,
+      "lastValidated": 1791216615913
+    },
+    {
+      "id": "2f855861-2b4b-43e7-a49a-ab3b20501d97",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "a0ea17cb-8ee0-49a1-8d87-851c25b5a380:0",
+      "targetNodeId": "2d49bf2d-b61f-42c9-87d6-550431d00631:0",
+      "targetRefType": "same-project",
+      "targetRefString": "Interact_GW_Weather_MCP_Server:Interact_GW_Weather_MCP_Server-freeflowpolicysequence-yhim4:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1791216613042,
+      "lastValidated": 1791216613042
+    },
+    {
+      "id": "3b175116-b753-456a-9393-742574402605",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "a0ea17cb-8ee0-49a1-8d87-851c25b5a380:0",
+      "targetNodeId": "caaca691-53fc-45bd-ae68-b79f3ce8d10e:0",
+      "targetRefType": "same-project",
+      "targetRefString": "Interact_GW_Weather_MCP_Server:weather-api-tool-yhim4:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1791216613042,
+      "lastValidated": 1791216613814
+    },
+    {
+      "id": "8cbac8a3-8add-4b56-9231-279ee3beed5d",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "a0ea17cb-8ee0-49a1-8d87-851c25b5a380:0",
+      "targetNodeId": "56aab829-7152-408e-bb18-e8cc674d0916:0",
+      "targetRefType": "same-project",
+      "targetRefString": "Interact_GW_Weather_MCP_Server:Interact_GW_Weather_MCP_Server-quota-yhim4:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1791216613042,
+      "lastValidated": 1791216614492
+    },
+    {
+      "id": "9d3ae220-95c4-4c0e-b7b7-401fd30640ba",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "2d49bf2d-b61f-42c9-87d6-550431d00631:0",
+      "targetNodeId": "08265988-72aa-4bb8-9799-46cc22318582:0",
+      "targetRefType": "same-project",
+      "targetRefString": "Interact_GW_Weather_MCP_Server:invoke-yhim4:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1791216611547,
+      "lastValidated": 1791216611547
+    },
+    {
+      "id": "a0049473-9b26-4550-a637-ada2c13da16c",
+      "projectId": "gG6nDKcA",
+      "sourceNodeId": "2d49bf2d-b61f-42c9-87d6-550431d00631:0",
+      "targetNodeId": "faf7b111-323a-41e7-ad38-3e5ed900c1f1:0",
+      "targetRefType": "same-project",
+      "targetRefString": "Interact_GW_Weather_MCP_Server:telemetry-yhim4:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1791216611547,
+      "lastValidated": 1791216612349
+    }
+  ]
+}

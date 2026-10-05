@@ -1,0 +1,12 @@
+kind: Telemetry
+apiVersion: api.ibm.com/v1
+metadata:
+  name: telemetry-yhim4
+  namespace: Interact_GW_Weather_MCP_Server
+  version: '1.0'
+  domain: mcp
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec: {}

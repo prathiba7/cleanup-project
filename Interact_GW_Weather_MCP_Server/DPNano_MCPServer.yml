@@ -1,0 +1,22 @@
+kind: MCPServer
+apiVersion: api.ibm.com/v1
+metadata:
+  name: weather-api-server-yhim4
+  namespace: Interact_GW_Weather_MCP_Server
+  version: '1.0'
+  domain: mcp
+  tags: []
+  labels:
+    origin: mcp-rest
+spec:
+  title: weather-api MCP Server
+  protocolVersion: V2025_11_25
+  quota:
+    $ref: >-
+      Interact_GW_Weather_MCP_Server:Interact_GW_Weather_MCP_Server-quota-yhim4:1.0
+  policy-sequence:
+    - $ref: >-
+        Interact_GW_Weather_MCP_Server:Interact_GW_Weather_MCP_Server-freeflowpolicysequence-yhim4:1.0
+  capabilities:
+    tools:
+      - $ref: Interact_GW_Weather_MCP_Server:weather-api-tool-yhim4:1.0

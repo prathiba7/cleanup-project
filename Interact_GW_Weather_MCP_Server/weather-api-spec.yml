@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  version: '1.0'
+  title: weather-api
+  x-ibm-name: weather-api
+  description: >-
+    Singapore Air Temperature API - provides real-time air temperature data for
+    Singapore
+servers:
+  - url: https://sample-api.eu-west-a.apiconnect.automation.ibm.com/environment
+paths:
+  /air-temperature:
+    get:
+      summary: Get air temperature readings across Singapore
+      description: >-
+        Returns the current (or recent) air temperature observations across
+        multiple stations in Singapore. The dataset covers May 2016 to present.
+      parameters:
+        - name: station_id
+          in: query
+          description: The station identifier to filter by a specific station (optional)
+          required: false
+          schema:
+            type: string
+            example: S101
+        - name: start_time
+          in: query
+          description: ISO-8601 timestamp to filter readings from this time (optional)
+          required: false
+          schema:
+            type: string
+            format: date-time
+            example: 2025-11-10T16:00:00.000Z
+        - name: end_time
+          in: query
+          description: ISO-8601 timestamp to filter readings up to this time (optional)
+          required: false
+          schema:
+            type: string
+            format: date-time
+            example: 2025-11-11T04:00:00.000Z
+      responses:
+        '200':
+          description: Successful retrieval of air-temperature readings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    description: List of station temperature readings
+                    items:
+                      type: object
+                      properties:
+                        station_id:
+                          type: string
+                          description: Unique station identifier
+                          example: S101
+                        timestamp:
+                          type: string
+                          format: date-time
+                          description: The time of the reading
+                          example: 2025-11-11T04:05:00.000Z
+                        temperature:
+                          type: number
+                          format: float
+                          description: Air temperature in degree Celsius
+                          example: 29.7
+                      required:
+                        - station_id
+                        - timestamp
+                        - temperature
+                  api_info:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        description: Status of the API response
+                        example: healthy
+                      version:
+                        type: string
+                        description: API version
+                        example: v1
+                    required:
+                      - status
+                      - version
+        '400':
+          description: Bad request e.g., invalid query parameter
+        '500':
+          description: Internal server error
+components:
+  securitySchemes:
+    clientID:
+      type: apiKey
+      in: header
+      name: X-IBM-Client-Id
+security:
+  - clientID: []
