@@ -1,0 +1,20 @@
+kind: Quota
+apiVersion: api.ibm.com/v1
+metadata:
+  name: watsonx-token-weighted-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  description: ''
+  domain: ai-platform
+spec:
+  maxRequest: 10000
+  interval: 60s
+  extensions:
+    dp-nano-gateway:
+      apiVersion: api.ibm.com/v1
+      spec:
+        weightExpr: $variable('aiGeneratedTokenCount')
+        exceedAction: return429
+        intervalOffset: 0
+        dynamicValue: ''

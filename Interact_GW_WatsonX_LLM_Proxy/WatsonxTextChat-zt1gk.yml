@@ -1,0 +1,15 @@
+kind: Watsonx
+apiVersion: api.ibm.com/v1
+metadata:
+  name: WatsonxTextChat-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  tlsClientProfile: sample-tls-client-profile:1.0.0
+  operation:
+    textChat: {}

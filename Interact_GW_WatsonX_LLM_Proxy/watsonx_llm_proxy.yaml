@@ -1,0 +1,27 @@
+kind: LLMProxy
+apiVersion: api.ibm.com/v1
+metadata:
+  name: watsonx_llm_proxy
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+  domain: ai-platform
+  description: ''
+spec:
+  title: WatsonX_LLM_Proxy
+  providers:
+    - Interact_GW_WatsonX_LLM_Proxy:watsonx:1.0.0
+  providerType: watsonx
+  basePath: /
+  selectedModels:
+    - ibm/granite-3-1-8b-base
+    - ibm/granite-4-h-small
+    - ibm/granite-embedding-278m-multilingual
+  plan:
+    $ref: Interact_GW_WatsonX_LLM_Proxy:plan-watsonx-llm-proxy-zt1gk:1.0.0
+  policy-sequence:
+    - $ref: >-
+        Interact_GW_WatsonX_LLM_Proxy:freeflowpolicysequence-watsonx-llm-proxy-zt1gk:1.0.0

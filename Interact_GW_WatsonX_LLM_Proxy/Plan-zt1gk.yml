@@ -1,0 +1,14 @@
+kind: Plan
+apiVersion: api.ibm.com/v1
+metadata:
+  name: plan-watsonx-llm-proxy-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  description: ''
+  domain: ai-platform
+spec:
+  qos:
+    withQuota:
+      watsonx-token-weighted:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:watsonx-token-weighted-zt1gk:1.0.0

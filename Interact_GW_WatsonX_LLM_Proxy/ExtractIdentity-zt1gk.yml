@@ -1,0 +1,21 @@
+kind: ExtractIdentity
+apiVersion: api.ibm.com/v1
+metadata:
+  name: ExtractIdentity-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  credentialType:
+    apiKey:
+      clientId:
+        httpHeader:
+          name: X-IBM-Client-Id
+      clientSecret:
+        httpHeader:
+          name: X-IBM-Client-Secret
+  namespace: client

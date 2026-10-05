@@ -1,0 +1,25 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: freeflowpolicysequence-watsonx-llm-proxy-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  main:
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:ExtractIdentity-zt1gk:1.0.0
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:Authenticate-zt1gk:1.0.0
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:Authorize-zt1gk:1.0.0
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:IBMCloudLogin-zt1gk:1.0.0
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:Parse-zt1gk:1.0.0
+    - $ref: Interact_GW_WatsonX_LLM_Proxy:OperationSwitch-zt1gk:1.0.0
+  monitoring:
+    $ref: Interact_GW_WatsonX_LLM_Proxy:Telemetry-zt1gk:1.0.0
+  error:
+    - errorType: []
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:Throw-zt1gk:1.0.0

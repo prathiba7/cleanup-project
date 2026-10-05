@@ -1,0 +1,43 @@
+kind: OperationSwitch
+apiVersion: api.ibm.com/v1
+metadata:
+  name: OperationSwitch-zt1gk
+  namespace: Interact_GW_WatsonX_LLM_Proxy
+  version: 1.0.0
+  tags: []
+  domain: ai-platform
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  cases:
+    - conditions:
+        - verbPath:
+            path: /deployment-models
+            verb: GET
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:WatsonxModels-zt1gk:1.0.0
+    - conditions:
+        - verbPath:
+            path: /text-chat
+            verb: POST
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:WatsonxTextChat-zt1gk:1.0.0
+    - conditions:
+        - verbPath:
+            path: /text-generate
+            verb: POST
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:WatsonxTextGen-zt1gk:1.0.0
+    - conditions:
+        - verbPath:
+            path: /tokenize
+            verb: POST
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:WatsonxTokenize-zt1gk:1.0.0
+    - conditions:
+        - verbPath:
+            path: /embeddings
+            verb: POST
+      execute:
+        - $ref: Interact_GW_WatsonX_LLM_Proxy:WatsonxEmbeddings-zt1gk:1.0.0
